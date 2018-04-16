@@ -1,0 +1,9 @@
+﻿Thank you for using Tag Cloud Generator!
+ 
+ Simply enter the absolute path of the .txt file you'd like to generate, or use the "Browse" button to open the file in the file explorer.
+
+ Then enter the absolute path to the folder in which you'd like to generate the .html file, or use the "Browse" button to open the folder explorer.
+
+ Then you just need to enter the number of words you'd like to generate. The Tag Cloud Generator will generate a tag cloud with that many tags with the highest count, sorted alphabetically.
+
+ If you'd like to include or exclude common words, such as "the" or "and" (among others), then just check the box to indicate your choice.

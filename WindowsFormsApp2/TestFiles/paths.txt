@@ -1,0 +1,30 @@
+﻿///////////////////////////////////
+// Paste these into the File Path text field
+//////////////////////////////////
+
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\TestFiles\aesopsfables.txt
+test/test-files/blank.txt
+test/test-files/callofcthulu.txt
+test/test-files/constitution.txt
+test/test-files/frankenstein.txt
+test/test-files/gettysburgaddress.txt
+test/test-files/ihaveadream.txt
+test/test-files/iliad.txt
+test/test-files/ImportanceOfBeingEarnest.txt
+test/test-files/lordoftheringstrilogy.txt
+test/test-files/mobydick.txt
+test/test-files/prideandprejudice.txt
+test/test-files/shortstory.txt
+test/test-files/tags1.txt
+test/test-files/tags2.txt
+test/test-files/tags3.txt
+test/test-files/test.txt
+test/test-files/theirfinesthour.txt
+test/test-files/ulysses.txt
+
+
+/////////////////////////////////////////
+// Paste this into the File text field
+/////////////////////////////////////////
+
+C:\Users\matts\OneDrive\Desktop

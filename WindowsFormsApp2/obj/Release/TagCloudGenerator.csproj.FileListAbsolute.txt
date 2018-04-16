@@ -1,0 +1,11 @@
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.exe.config
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.exe
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Release\WindowsFormsApp2.pdb
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\TagCloudGenerator.csprojResolveAssemblyReference.cache
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.TagCloudGeneratorMVC.Views.HowToWindow.resources
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\TagCloudGenerator.View.resources
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\TagCloudGenerator.csproj.GenerateResource.cache
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\TagCloudGenerator.csproj.CoreCompileInputs.cache
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.exe
+C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.pdb
