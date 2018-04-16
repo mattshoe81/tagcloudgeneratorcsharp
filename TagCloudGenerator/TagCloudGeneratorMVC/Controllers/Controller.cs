@@ -38,19 +38,19 @@ namespace TagCloudGenerator.ControllerNS {
 		/// <summary>
 		/// Location of the file containing the list of common words.
 		/// </summary>
-		private const string COMMON_WORDS_LOCATION = @"C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\docs\CommonWords.txt";
+		private const string COMMON_WORDS_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\CommonWords.txt";
 		/// <summary>
 		/// Location of the file containing the html header information.
 		/// </summary>
-		private const string HEADER_LOCATION = @"C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\docs\html-templates\header.txt";
+		private const string HEADER_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\header.txt";
 		/// <summary>
 		/// Location of the file containing the html footer information.
 		/// </summary>
-		private const string FOOTER_LOCATION = @"C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\docs\html-templates\footer.txt";
+		private const string FOOTER_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\footer.txt";
 		/// <summary>
 		/// Location of the file containing the CSS stying for the html page.
 		/// </summary>
-		private const string CSS_TEMPLATE_LOCATION = @"C:\Users\matts\source\repos\WindowsFormsApp2\WindowsFormsApp2\docs\html-templates\css-template.txt";
+		private const string CSS_TEMPLATE_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\css-template.txt";
 
 		/// <summary>
 		/// Constructs a controller object, given a reference to the model and view component of the project.
@@ -78,8 +78,8 @@ namespace TagCloudGenerator.ControllerNS {
 			 */
 			try {
 				// Get the Text from this.view.InputFilePath and this.view.OutputFolderPath
-				string inputFilePath = this.view.GetInputFilePath().Text;
-				string outputFolder = this.view.GetOutputFolder().Text;
+				string inputFilePath = this.view.InputFilePath;
+				string outputFolder = this.view.OutputFolder;
 
 				// Append the output folder path with the appropriate file name
 				string outputLocation = outputFolder + TAG_CLOUD_EXTENSION;
@@ -97,20 +97,20 @@ namespace TagCloudGenerator.ControllerNS {
 				List<KeyValuePair<string, int>> sortedTags = this.SortTags(this.model.GetTagsDict(), numberOfTags);
 
 				// Print the html and css file 
-				this.view.UpdateStatusLabel("Loading...");
+				this.view.StatusLabel = "Loading...";
 				this.PrintHeader(outputLocation, inputFilePath, numberOfTags);
 				this.PrintBody(outputLocation, sortedTags, numberOfTags);
 				this.PrintFooter(outputLocation);
 				this.PrintCSS(outputFolder);
 
-				this.view.UpdateStatusLabel("Success!");
+				this.view.StatusLabel = "Success!";
 				this.model.ClearTags();
 
 				System.Diagnostics.Process.Start(outputLocation);
 			} catch (TagCloudException e) {
-				this.view.UpdateStatusLabel(e.Message);
+				this.view.StatusLabel = e.Message;
 			} catch (Exception e) {
-				this.view.UpdateStatusLabel("Something went wrong, try again or select new locations.");
+				this.view.StatusLabel = "Something went wrong, try again or select new locations.";
 			}
 		}
 
@@ -162,7 +162,7 @@ namespace TagCloudGenerator.ControllerNS {
 		private int GetNumberOfTags() {
 			int numberOfTags = 0;
 			try {
-				numberOfTags = Int32.Parse(this.view.GetNumberOfWordsField().Text);
+				numberOfTags = Int32.Parse(this.view.NumberOfWords);
 			} catch (Exception e) {
 				throw new InvalidNumberOfWordsException();
 			}
@@ -178,10 +178,9 @@ namespace TagCloudGenerator.ControllerNS {
 		/// <param name="removeCommonWords">New truth value of <code>this.model.RemoveCommonWords</code></param>
 		public void UpdateRemoveCommonWords(bool removeCommonWords) {
 			this.model.UpdateRemoveCommonWords(removeCommonWords);
-			CheckBox checkBox = this.view.getRemoveCommonWordsButton();
-			bool isChecked = checkBox.Checked;
+			bool isChecked = this.view.RemoveCommonWords;
 			if (isChecked != removeCommonWords) {
-				checkBox.Checked = removeCommonWords;
+				this.view.RemoveCommonWords = removeCommonWords;
 			}
 		}
 

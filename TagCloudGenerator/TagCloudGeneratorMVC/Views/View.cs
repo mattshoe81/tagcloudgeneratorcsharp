@@ -19,6 +19,31 @@ namespace TagCloudGenerator {
 			InitializeComponent();
 		}
 
+		public string InputFilePath {
+			get { return this.inputFilePath.Text; }
+			set { this.inputFilePath.Text = value; }
+		}
+
+		public string OutputFolder {
+			get { return this.outputFolderPath.Text; }
+			set { this.outputFolderPath.Text = value; }
+		}
+
+		public string NumberOfWords {
+			get { return this.numberOfWordsField.Text; }
+			set { this.numberOfWordsField.Text = value; }
+		}
+
+		public bool RemoveCommonWords {
+			get { return this.removeCommonWordsButton.Checked; }
+			set { this.removeCommonWordsButton.Checked = value; }
+		}
+
+		public string StatusLabel {
+			set { this.statusLabel.Text = value; this.statusLabel.Refresh(); }
+		}
+
+
 		public void RegisterObserver(Controller controller) {
 			this.controller = controller;
 		}
@@ -53,11 +78,6 @@ namespace TagCloudGenerator {
 			this.ShowFileDialog(sender, e);
 		}
 
-		private void HowToMenuItem_Click(object sender, EventArgs e) {
-
-
-		}
-
 		private void RemoveCommonWordsButton_CheckedChanged(object sender, EventArgs e) {
 			RadioButton button = (RadioButton)sender;
 			if (button.Checked) {
@@ -87,48 +107,16 @@ namespace TagCloudGenerator {
 			}
 		}
 
-
-		public System.Windows.Forms.TextBox GetInputFilePath() {
-			return this.inputFilePath;
-		}
-
-		public System.Windows.Forms.TextBox GetOutputFolder() {
-			return this.outputFolderPath;
-		}
-
-		public System.Windows.Forms.CheckBox getRemoveCommonWordsButton() {
-			return this.removeCommonWordsButton;
-		}
-
-		public void UpdateStatusLabel(string text) {
-			this.statusLabel.Text = text;
-			this.statusLabel.Refresh();
-		}
-
 		public System.Windows.Forms.OpenFileDialog GetFileDialog() {
 			return this.openFileDialog;
 		}
-
 
 		public System.Windows.Forms.FolderBrowserDialog GetFolderBrowser() {
 			return this.folderBrowserDialog;
 		}
 
-		public System.Windows.Forms.TextBox GetNumberOfWordsField() {
-			return this.numberOfWordsField;
-		}
-
-		public System.Windows.Forms.Label GetStatusLabel() {
-			return this.statusLabel;
-		}
-
 		private void ResetButton_Click(object sender, EventArgs e) {
 			this.controller.Reset();
-		}
-
-		public string InputFilePath {
-			get { return this.inputFilePath.Text; }
-			set { this.inputFilePath.Text = value; }
 		}
 	}
 }
