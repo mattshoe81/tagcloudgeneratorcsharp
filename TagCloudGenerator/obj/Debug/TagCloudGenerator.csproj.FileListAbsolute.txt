@@ -8,3 +8,4 @@ C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Debug\TagClo
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Debug\TagCloudGenerator.csproj.CoreCompileInputs.cache
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Debug\TagCloudGenerator.exe
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Debug\TagCloudGenerator.pdb
+C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Debug\TagCloudGenerator.csprojResolveAssemblyReference.cache

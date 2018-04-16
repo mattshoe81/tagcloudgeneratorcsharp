@@ -38,19 +38,19 @@ namespace TagCloudGenerator.ControllerNS {
 		/// <summary>
 		/// Location of the file containing the list of common words.
 		/// </summary>
-		private const string COMMON_WORDS_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\CommonWords.txt";
+		private const string COMMON_WORDS_LOCATION = @"..\..\docs\CommonWords.txt";
 		/// <summary>
 		/// Location of the file containing the html header information.
 		/// </summary>
-		private const string HEADER_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\header.txt";
+		private const string HEADER_LOCATION = @"..\..\docs\html-templates\header.txt";
 		/// <summary>
 		/// Location of the file containing the html footer information.
 		/// </summary>
-		private const string FOOTER_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\footer.txt";
+		private const string FOOTER_LOCATION = @"..\..\docs\html-templates\footer.txt";
 		/// <summary>
 		/// Location of the file containing the CSS stying for the html page.
 		/// </summary>
-		private const string CSS_TEMPLATE_LOCATION = @"C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\docs\html-templates\css-template.txt";
+		private const string CSS_TEMPLATE_LOCATION = @"..\..\docs\html-templates\css-template.txt";
 
 		/// <summary>
 		/// Constructs a controller object, given a reference to the model and view component of the project.
