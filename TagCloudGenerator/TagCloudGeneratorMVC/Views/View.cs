@@ -19,16 +19,25 @@ namespace TagCloudGenerator {
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Property to get and set the text within the <code>this.inputFilePath</code> TextBox.
+		/// </summary>
 		public string InputFilePath {
 			get { return this.inputFilePath.Text; }
 			set { this.inputFilePath.Text = value; }
 		}
 
+		/// <summary>
+		/// Property to get and set the text within the <code>this.outputFolder</code> TextBox.
+		/// </summary>
 		public string OutputFolder {
 			get { return this.outputFolderPath.Text; }
 			set { this.outputFolderPath.Text = value; }
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public string NumberOfWords {
 			get { return this.numberOfWordsField.Text; }
 			set { this.numberOfWordsField.Text = value; }

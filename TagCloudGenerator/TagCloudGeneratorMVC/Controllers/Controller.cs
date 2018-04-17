@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TagCloudGenerator;
-using System.IO;
 using System.Windows.Forms;
 using WindowsFormsApp2.TagCloudGeneratorMVC.Controllers.Exceptions;
 using WindowsFormsApp2.TagCloudGeneratorMVC.Models;
+using System.IO;
 
 namespace TagCloudGenerator.ControllerNS {
 
@@ -131,6 +131,7 @@ namespace TagCloudGenerator.ControllerNS {
 		/// is <code>this.commonWords</code>.
 		/// </summary>
 		private void InitializeCommonWords() {
+
 			this.commonWords = new HashSet<string>();
 			string[] lines = File.ReadAllLines(COMMON_WORDS_LOCATION);
 			foreach (string line in lines) {

@@ -22,7 +22,7 @@ namespace TagCloudGenerator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TagCloudGenerator.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TagCloudGenerator.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace TagCloudGenerator.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -159,7 +159,7 @@ namespace TagCloudGenerator.Properties {
         ///
         ///could        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string CommonWords {
+        public static string CommonWords {
             get {
                 return ResourceManager.GetString("CommonWords", resourceCulture);
             }
@@ -182,7 +182,7 @@ namespace TagCloudGenerator.Properties {
         ///    border:                        4px solid gray;
         ///    padding:                    [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string css_template {
+        public static string css_template {
             get {
                 return ResourceManager.GetString("css_template", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace TagCloudGenerator.Properties {
         ///    &lt;/body&gt;
         ///&lt;/html&gt; .
         /// </summary>
-        internal static string footer {
+        public static string footer {
             get {
                 return ResourceManager.GetString("footer", resourceCulture);
             }
@@ -218,7 +218,7 @@ namespace TagCloudGenerator.Properties {
         ///            
         ///            &lt;div&gt;.
         /// </summary>
-        internal static string header {
+        public static string header {
             get {
                 return ResourceManager.GetString("header", resourceCulture);
             }
