@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.browseInputMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,16 +69,16 @@
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
-			// BrowseInputMenuItem
+			// browseInputMenuItem
 			// 
-			this.browseInputMenuItem.Name = "BrowseInputMenuItem";
+			this.browseInputMenuItem.Name = "browseInputMenuItem";
 			this.browseInputMenuItem.Size = new System.Drawing.Size(436, 46);
 			this.browseInputMenuItem.Text = "Browse Input Files";
 			this.browseInputMenuItem.Click += new System.EventHandler(this.ShowFileDialog);
 			// 
-			// BrowseOutputMenuItem
+			// browseOutputMenuItem
 			// 
-			this.browseOutputMenuItem.Name = "BrowseOutputMenuItem";
+			this.browseOutputMenuItem.Name = "browseOutputMenuItem";
 			this.browseOutputMenuItem.Size = new System.Drawing.Size(436, 46);
 			this.browseOutputMenuItem.Text = "Browse Output Folders";
 			this.browseOutputMenuItem.Click += new System.EventHandler(this.ShowFolderDialog);
@@ -105,10 +106,10 @@
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Input File Path:";
 			// 
-			// InputFilePath
+			// inputFilePath
 			// 
 			this.inputFilePath.Location = new System.Drawing.Point(283, 66);
-			this.inputFilePath.Name = "InputFilePath";
+			this.inputFilePath.Name = "inputFilePath";
 			this.inputFilePath.Size = new System.Drawing.Size(533, 38);
 			this.inputFilePath.TabIndex = 2;
 			// 
@@ -121,56 +122,56 @@
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Output Folder:";
 			// 
-			// OutputFolderPath
+			// outputFolderPath
 			// 
 			this.outputFolderPath.Location = new System.Drawing.Point(283, 146);
-			this.outputFolderPath.Name = "OutputFolderPath";
+			this.outputFolderPath.Name = "outputFolderPath";
 			this.outputFolderPath.Size = new System.Drawing.Size(533, 38);
 			this.outputFolderPath.TabIndex = 4;
 			// 
-			// ResetButton
+			// resetButton
 			// 
 			this.resetButton.Location = new System.Drawing.Point(244, 415);
-			this.resetButton.Name = "ResetButton";
+			this.resetButton.Name = "resetButton";
 			this.resetButton.Size = new System.Drawing.Size(231, 62);
 			this.resetButton.TabIndex = 6;
 			this.resetButton.Text = "Reset";
 			this.resetButton.UseVisualStyleBackColor = true;
 			this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
 			// 
-			// GenerateButton
+			// generateButton
 			// 
 			this.generateButton.Location = new System.Drawing.Point(565, 415);
-			this.generateButton.Name = "GenerateButton";
+			this.generateButton.Name = "generateButton";
 			this.generateButton.Size = new System.Drawing.Size(231, 62);
 			this.generateButton.TabIndex = 7;
 			this.generateButton.Text = "Generate";
 			this.generateButton.UseVisualStyleBackColor = true;
 			this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
 			// 
-			// StatusLabel
+			// statusLabel
 			// 
 			this.statusLabel.AutoSize = true;
 			this.statusLabel.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.statusLabel.Location = new System.Drawing.Point(12, 329);
 			this.statusLabel.MaximumSize = new System.Drawing.Size(200, 0);
 			this.statusLabel.MinimumSize = new System.Drawing.Size(1000, 0);
-			this.statusLabel.Name = "StatusLabel";
+			this.statusLabel.Name = "statusLabel";
 			this.statusLabel.Size = new System.Drawing.Size(1000, 47);
 			this.statusLabel.TabIndex = 8;
 			this.statusLabel.Text = "Ready";
 			this.statusLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
-			// OpenFileDialog
+			// openFileDialog
 			// 
 			this.openFileDialog.FileName = "openFileDialog1";
 			// 
-			// FileDialogButton
+			// fileDialogButton
 			// 
 			this.fileDialogButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.fileDialogButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.fileDialogButton.Location = new System.Drawing.Point(839, 52);
-			this.fileDialogButton.Name = "FileDialogButton";
+			this.fileDialogButton.Name = "fileDialogButton";
 			this.fileDialogButton.Size = new System.Drawing.Size(159, 65);
 			this.fileDialogButton.TabIndex = 9;
 			this.fileDialogButton.Text = "Browse";
@@ -198,20 +199,20 @@
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Number of Words:";
 			// 
-			// NumberOfWordsField
+			// numberOfWordsField
 			// 
 			this.numberOfWordsField.Location = new System.Drawing.Point(283, 227);
-			this.numberOfWordsField.Name = "NumberOfWordsField";
+			this.numberOfWordsField.Name = "numberOfWordsField";
 			this.numberOfWordsField.Size = new System.Drawing.Size(170, 38);
 			this.numberOfWordsField.TabIndex = 12;
 			// 
-			// RemoveCommonWordsButton
+			// removeCommonWordsButton
 			// 
 			this.removeCommonWordsButton.AutoSize = true;
 			this.removeCommonWordsButton.Checked = true;
 			this.removeCommonWordsButton.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.removeCommonWordsButton.Location = new System.Drawing.Point(540, 226);
-			this.removeCommonWordsButton.Name = "RemoveCommonWordsButton";
+			this.removeCommonWordsButton.Name = "removeCommonWordsButton";
 			this.removeCommonWordsButton.Size = new System.Drawing.Size(367, 36);
 			this.removeCommonWordsButton.TabIndex = 13;
 			this.removeCommonWordsButton.Text = "Remove Common Words";
@@ -237,6 +238,7 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.menuStrip1);
 			this.HelpButton = true;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "View";
 			this.Text = "Tag Cloud Generator";

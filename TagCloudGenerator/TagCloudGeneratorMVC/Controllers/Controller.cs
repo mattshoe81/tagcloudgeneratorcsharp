@@ -111,6 +111,7 @@ namespace TagCloudGenerator.ControllerNS {
 				this.view.StatusLabel = e.Message;
 			} catch (Exception e) {
 				this.view.StatusLabel = "Something went wrong, try again or select new locations.";
+				String message = e.Message;
 			}
 		}
 
@@ -150,6 +151,7 @@ namespace TagCloudGenerator.ControllerNS {
 			try {
 				 lines = File.ReadAllLines(location);
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new InvalidInputFileException();
 			}
 			return lines;
@@ -165,6 +167,7 @@ namespace TagCloudGenerator.ControllerNS {
 			try {
 				numberOfTags = Int32.Parse(this.view.NumberOfWords);
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new InvalidNumberOfWordsException();
 			}
 			if (numberOfTags < 0) throw new InvalidNumberOfWordsException();
@@ -278,6 +281,7 @@ namespace TagCloudGenerator.ControllerNS {
 					}
 				}
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new InvalidOutputFolderException();
 			}
 
@@ -329,6 +333,7 @@ namespace TagCloudGenerator.ControllerNS {
 					}
 				}
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new Exception("Something went wrong, please Reset or pick different locations.");
 			}
 
@@ -348,6 +353,7 @@ namespace TagCloudGenerator.ControllerNS {
 					}
 				}
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new Exception("Something went wrong, please Reset or pick different locations.");
 			}
 			
@@ -367,6 +373,7 @@ namespace TagCloudGenerator.ControllerNS {
 					}
 				}
 			} catch (Exception e) {
+				string message = e.Message;
 				throw new Exception("Something went wrong, please Reset or pick different locations.");
 			}
 			

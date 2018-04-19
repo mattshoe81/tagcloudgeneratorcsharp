@@ -1,7 +1,6 @@
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\bin\Release\TagCloudGenerator.exe.config
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\bin\Release\TagCloudGenerator.exe
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\bin\Release\TagCloudGenerator.pdb
-C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Release\TagCloudGenerator.csprojResolveAssemblyReference.cache
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Release\WindowsFormsApp2.TagCloudGeneratorMVC.Views.HowToWindow.resources
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Release\TagCloudGenerator.View.resources
 C:\Users\matts\source\repos\TagCloudGenerator\TagCloudGenerator\obj\Release\TagCloudGenerator.Properties.Resources.resources
