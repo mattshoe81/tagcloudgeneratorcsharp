@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2.TagCloudGeneratorMVC.Views {
+namespace TagCloudGenerator.MVC.Views {
 	public partial class HowToWindow : Form {
 		public HowToWindow() {
 			InitializeComponent();

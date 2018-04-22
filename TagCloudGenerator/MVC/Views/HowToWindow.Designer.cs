@@ -1,5 +1,7 @@
-﻿namespace WindowsFormsApp2.TagCloudGeneratorMVC.Views {
-	partial class HowToWindow {
+﻿using System.Windows.Forms;
+
+namespace TagCloudGenerator.MVC.Views {
+	partial class HowToWindow : Form {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -65,7 +67,7 @@
 			this.label3.Size = new System.Drawing.Size(799, 96);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Simply enter the absolute path of the .txt file you\'d like to generate, or use th" +
-    "e \"Browse\" button to open the file in the file explorer.";
+	"e \"Browse\" button to open the file in the file explorer.";
 			// 
 			// label4
 			// 
@@ -96,7 +98,7 @@
 			this.label6.Size = new System.Drawing.Size(793, 96);
 			this.label6.TabIndex = 4;
 			this.label6.Text = "Enter the absolute path to the folder in which you\'d like to generate the .html f" +
-    "ile, or use the \"Browse\" button to open the folder explorer.";
+	"ile, or use the \"Browse\" button to open the folder explorer.";
 			// 
 			// label7
 			// 
@@ -117,8 +119,8 @@
 			this.label8.Size = new System.Drawing.Size(796, 96);
 			this.label8.TabIndex = 6;
 			this.label8.Text = " Enter the number of words you\'d like to generate. The Tag Cloud Generator will g" +
-    "enerate a tag cloud with that many tags with the highest count, sorted alphabeti" +
-    "cally.";
+	"enerate a tag cloud with that many tags with the highest count, sorted alphabeti" +
+	"cally.";
 			// 
 			// label9
 			// 
@@ -139,7 +141,7 @@
 			this.label10.Size = new System.Drawing.Size(799, 96);
 			this.label10.TabIndex = 8;
 			this.label10.Text = "If you\'d like to include or exclude common words, such as \"the\" or \"and\" (among o" +
-    "thers), then just check the box to indicate your choice.";
+	"thers), then just check the box to indicate your choice.";
 			// 
 			// button1
 			// 

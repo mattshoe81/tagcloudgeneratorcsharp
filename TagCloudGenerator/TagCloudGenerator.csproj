@@ -50,32 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Controller.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Exceptions\BlankFieldException.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Exceptions\InvalidInputFileException.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Exceptions\InvalidNumberOfWordsException.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Exceptions\InvalidOutputFolderException.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Models\Model.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Controllers\Exceptions\TagCloudException.cs" />
-    <Compile Include="TagCloudGeneratorMVC\Views\HowToWindow.cs">
+    <Compile Include="MVC\Controllers\Controller.cs" />
+    <Compile Include="MVC\Controllers\Exceptions\BlankFieldException.cs" />
+    <Compile Include="MVC\Controllers\Exceptions\InvalidInputFileException.cs" />
+    <Compile Include="MVC\Controllers\Exceptions\InvalidNumberOfWordsException.cs" />
+    <Compile Include="MVC\Controllers\Exceptions\InvalidOutputFolderException.cs" />
+    <Compile Include="MVC\Controllers\IController.cs" />
+    <Compile Include="MVC\Models\IModel.cs" />
+    <Compile Include="MVC\Models\Model.cs" />
+    <Compile Include="MVC\Controllers\Exceptions\TagCloudException.cs" />
+    <Compile Include="MVC\Views\HowToWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TagCloudGeneratorMVC\Views\HowToWindow.Designer.cs">
+    <Compile Include="MVC\Views\HowToWindow.Designer.cs">
       <DependentUpon>HowToWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="TagCloudGeneratorMVC\Views\View.cs">
+    <Compile Include="MVC\Views\IMainForm.cs" />
+    <Compile Include="MVC\Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TagCloudGeneratorMVC\Views\View.Designer.cs">
-      <DependentUpon>View.cs</DependentUpon>
+    <Compile Include="MVC\Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="TagCloudGeneratorMVC\Views\HowToWindow.resx">
+    <EmbeddedResource Include="MVC\Views\HowToWindow.resx">
       <DependentUpon>HowToWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TagCloudGeneratorMVC\Views\View.resx">
-      <DependentUpon>View.cs</DependentUpon>
+    <EmbeddedResource Include="MVC\Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

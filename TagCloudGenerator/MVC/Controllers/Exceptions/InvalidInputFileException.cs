@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp2.TagCloudGeneratorMVC.Controllers.Exceptions {
+namespace TagCloudGenerator.MVC.Controllers.Exceptions {
 	public class InvalidInputFileException : Exception {
 
 		public InvalidInputFileException()

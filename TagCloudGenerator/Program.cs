@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TagCloudGenerator.MVC.Views;
+using TagCloudGenerator.MVC.Models;
+using TagCloudGenerator.MVC.Controllers;
 
 namespace TagCloudGenerator {
 	static class Program {
@@ -13,9 +16,9 @@ namespace TagCloudGenerator {
 		static void Main() {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			TagCloudGenerator.ModelNS.Model model = new ModelNS.Model();
-			TagCloudGenerator.View view = new View();
-			TagCloudGenerator.ControllerNS.Controller controller = new ControllerNS.Controller(model, view);
+			Model model = new Model();
+			MainView view = new MainView();
+			Controller controller = new Controller(model, view);
 			view.RegisterObserver(controller);
 			Application.Run(view);			
 		}

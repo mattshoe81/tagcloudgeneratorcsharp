@@ -5,22 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using TagCloudGenerator;
 using System.Windows.Forms;
-using WindowsFormsApp2.TagCloudGeneratorMVC.Controllers.Exceptions;
-using WindowsFormsApp2.TagCloudGeneratorMVC.Models;
+using TagCloudGenerator.MVC.Controllers.Exceptions;
+using TagCloudGenerator.MVC.Models;
+using TagCloudGenerator.MVC.Views;
 using System.IO;
 
-namespace TagCloudGenerator.ControllerNS {
+namespace TagCloudGenerator.MVC.Controllers {
 
 	public class Controller {
 
 		/// <summary>
 		/// Reference to the model component of the project.
 		/// </summary>
-		private TagCloudGenerator.ModelNS.Model model;
+		private Model model;
 		/// <summary>
 		/// Reference to the view component of the project.
 		/// </summary>
-		private TagCloudGenerator.View view;
+		private MainView view;
 		/// <summary>
 		/// HashSet containing the characters considered to be separators.
 		/// </summary>
@@ -33,7 +34,9 @@ namespace TagCloudGenerator.ControllerNS {
 		/// String of all possible separators.
 		/// </summary>
 		private const string SEPARATORS = "\t\n\r,-.!?[]\\;: /()\"*_#'~";
-
+		/// <summary>
+		/// The file name of the html output page.
+		/// </summary>
 		private const string TAG_CLOUD_EXTENSION = "/tagcloud.html";
 		/// <summary>
 		/// Location of the file containing the list of common words.
@@ -57,18 +60,13 @@ namespace TagCloudGenerator.ControllerNS {
 		/// </summary>
 		/// <param name="model">Reference to the project's model</param>
 		/// <param name="view">Reference to the projects's view</param>
-		public Controller(TagCloudGenerator.ModelNS.Model model, TagCloudGenerator.View view) {
+		public Controller(Model model, MainView view) {
 			this.model = model;
 			this.view = view;
 			this.InitializeSeparators();
 			this.InitializeCommonWords();
 		}
-
-		/// <summary>
-		/// This method serves as a sort of "Main" method for the Controller class. It serves as 
-		/// the entry point for the controller class, which orchestrates the performance of the 
-		/// controller class.
-		/// </summary>
+		
 		public void GenerateTagCloud() {
 			/*
 			 *  Use try/catch block to catch the re-thrown exceptions generated throughout
@@ -94,7 +92,7 @@ namespace TagCloudGenerator.ControllerNS {
 				this.ParseText(inputLines);
 				
 				// Get a sorted list of the parsed tags
-				List<KeyValuePair<string, int>> sortedTags = this.SortTags(this.model.GetTagsDict(), numberOfTags);
+				List<KeyValuePair<string, int>> sortedTags = this.SortTags(this.model.GetTags(), numberOfTags);
 
 				// Print the html and css file 
 				this.view.StatusLabel = "Loading...";
@@ -175,11 +173,6 @@ namespace TagCloudGenerator.ControllerNS {
 			return numberOfTags;
 		}
 
-		/// <summary>
-		/// Passes <code>this.view.RemoveCommonWords.Checked</code> to the model to update 
-		/// <code>this.model.RemoveCommonWords</code> to match user specification.
-		/// </summary>
-		/// <param name="removeCommonWords">New truth value of <code>this.model.RemoveCommonWords</code></param>
 		public void UpdateRemoveCommonWords(bool removeCommonWords) {
 			this.model.UpdateRemoveCommonWords(removeCommonWords);
 			bool isChecked = this.view.RemoveCommonWords;
@@ -204,10 +197,10 @@ namespace TagCloudGenerator.ControllerNS {
 					if (!this.separators.Contains(word[0])) {
 						if (this.model.RemoveCommonWords()) {
 							if (!this.commonWords.Contains(word)) {
-								this.model.AddTagToDict(word);
+								this.model.AddTag(word);
 							}
 						} else {
-							this.model.AddTagToDict(word);
+							this.model.AddTag(word);
 						}
 					}
 				}
@@ -386,7 +379,7 @@ namespace TagCloudGenerator.ControllerNS {
 		/// <returns>Font size of a tag, given its count</returns>
 		private int ScaleFontSize(int count) {
 
-			int lowestFrequency = this.model.GetTagsDict().Min(x => x.Value);
+			int lowestFrequency = this.model.GetTags().Min(x => x.Value);
 			/*
 			 * Calculate the font size proportional to tag frequency. To
 			 * accomplish proper scaling for the font sizes, Scale them
@@ -404,7 +397,7 @@ namespace TagCloudGenerator.ControllerNS {
 			 * scaling down incrementally should keep the font sizes from
 			 * growing too fast.
 			 */
-			int numberOfTags = this.model.GetTagsDict().Count;
+			int numberOfTags = this.model.GetTags().Count;
 			if (numberOfTags > 1000) {
 				fontSize /= (numberOfTags / 1000);
 			} else if (numberOfTags > 500) {
@@ -461,20 +454,11 @@ namespace TagCloudGenerator.ControllerNS {
 			return hexColor;
 		}
 
-		/// <summary>
-		/// Resets the model and view to its initial state, clearing any existing data.
-		/// </summary>
 		public void Reset() {
 			this.model.Reset();
 			this.view.Reset();
 		}
 
-		/// <summary>
-		/// Returns an exception with a message describing the validity of the given inputs.
-		/// </summary>
-		/// <param name="inputPath"></param>
-		/// <param name="outputFolder"></param>
-		/// <param name="numberOfWords"></param>
 		public string ValidateInputs(string inputPath, string outputFolder, string numberOfWords) {
 
 			if (!File.Exists(inputPath)) {

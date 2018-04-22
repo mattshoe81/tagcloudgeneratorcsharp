@@ -7,37 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TagCloudGenerator.ControllerNS;
-using WindowsFormsApp2.TagCloudGeneratorMVC.Views;
+using TagCloudGenerator.MVC.Controllers;
+using TagCloudGenerator.MVC.Views;
 
-namespace TagCloudGenerator {
-	public partial class View : Form {
+namespace TagCloudGenerator.MVC.Views {
+	public partial class MainView : Form, IMainForm {
 
 		private Controller controller;
 
-		public View() {
+		public MainView() {
 			InitializeComponent();
 		}
 
-		/// <summary>
-		/// Property to get and set the text within the <code>this.inputFilePath</code> TextBox.
-		/// </summary>
+		public System.Windows.Forms.OpenFileDialog FileDialog {
+			get { return this.openFileDialog; }
+		}
+
+		public System.Windows.Forms.FolderBrowserDialog FolderBrowser {
+			get { return this.folderBrowserDialog; }
+		}
+
 		public string InputFilePath {
 			get { return this.inputFilePath.Text; }
 			set { this.inputFilePath.Text = value; }
 		}
 
-		/// <summary>
-		/// Property to get and set the text within the <code>this.outputFolder</code> TextBox.
-		/// </summary>
 		public string OutputFolder {
 			get { return this.outputFolderPath.Text; }
 			set { this.outputFolderPath.Text = value; }
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
 		public string NumberOfWords {
 			get { return this.numberOfWordsField.Text; }
 			set { this.numberOfWordsField.Text = value; }
@@ -57,16 +56,16 @@ namespace TagCloudGenerator {
 			this.controller = controller;
 		}
 
-		private void generateButton_Click(object sender, EventArgs e) {
-			this.controller.GenerateTagCloud();
-		}
-
 		public void Reset() {
 			this.inputFilePath.Text = "";
 			this.outputFolderPath.Text = "";
 			this.numberOfWordsField.Text = "";
 			this.removeCommonWordsButton.Checked = true;
 			this.statusLabel.Text = "Ready!";
+		}
+
+		private void generateButton_Click(object sender, EventArgs e) {
+			this.controller.GenerateTagCloud();
 		}
 
 		private void ShowFileDialog(object sender, EventArgs e) {			
@@ -114,14 +113,6 @@ namespace TagCloudGenerator {
 			} catch (Exception exception) {
 				this.statusLabel.Text = exception.Message;
 			}
-		}
-
-		public System.Windows.Forms.OpenFileDialog GetFileDialog() {
-			return this.openFileDialog;
-		}
-
-		public System.Windows.Forms.FolderBrowserDialog GetFolderBrowser() {
-			return this.folderBrowserDialog;
 		}
 
 		private void ResetButton_Click(object sender, EventArgs e) {

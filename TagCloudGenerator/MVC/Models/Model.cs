@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TagCloudGenerator.ModelNS {
-	public class Model {
+namespace TagCloudGenerator.MVC.Models {
+	public class Model : IModel {
 
 		private Dictionary<string, int> tagsDict;
 
@@ -20,7 +20,7 @@ namespace TagCloudGenerator.ModelNS {
 			this.removeCommonWords = true;
 		}
 
-		public Dictionary<string, int> GetTagsDict() {
+		public Dictionary<string, int> GetTags() {
 			return this.tagsDict;
 		}
 
@@ -32,7 +32,7 @@ namespace TagCloudGenerator.ModelNS {
 			return this.removeCommonWords;
 		}
 
-		public void AddTagToDict(string tag) {
+		public void AddTag(string tag) {
 			if (this.tagsDict.ContainsKey(tag)) {
 				this.tagsDict[tag]++;
 			} else {

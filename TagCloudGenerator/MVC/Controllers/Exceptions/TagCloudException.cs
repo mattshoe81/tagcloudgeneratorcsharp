@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp2.TagCloudGeneratorMVC.Models {
+namespace TagCloudGenerator.MVC.Controllers.Exceptions {
 	public class TagCloudException : Exception {
 
 		public TagCloudException() {}
